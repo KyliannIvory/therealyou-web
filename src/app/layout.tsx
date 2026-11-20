@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bodoni_Moda, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni-moda",
   subsets: ["latin"],
-});
+  weight: ["400", "500", "600", "700", "800", "900"],
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-});
+  weight: ["300", "400","500", "600", "700"],
+})
 
 export const metadata: Metadata = {
   title: "The Real You",
-  description: "💈 TheRealYou web app: find a hair salon or barbershop " +
-      "in Côte d'Ivoire and book in a few clicks. " +
-      "Client space to book appointments, pro dashboard to manage schedule," +
-      " services and bookings. Next.js · TypeScript · Tailwind CSS",
+  description: "The Real You : trouvez les meilleurs salons de coiffure, " +
+      "barbiers et instituts de beauté en Côte d'Ivoire et réservez " +
+      "votre rendez-vous en quelques clics.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bodoniModa.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
       <body>
-        <header> Mon application perso</header>
-        <main> {children} </main>
+        {children}
       </body>
     </html>
   );
