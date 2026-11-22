@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    --color-glacier-50: #f4faff;
+    --color-glacier-100: #e0f2fe;
+    --color-glacier-200: #bae6fd;
+    --color-glacier-300: #7dd3fc;
+    --color-glacier-400: #38bdf8;
+    --color-glacier-500: #0ea5e9;
+    --color-glacier-600: #0284c7;
+    --color-glacier-700: #0369a1;
+    --color-glacier-800: #075985;
+    --color-glacier-900: #082f49;
+
+    --color-ice-slate: #475569;
+    --color-ice-dark: #0f172a;
+
+    --font-display: var(--font-bodoni-moda);
+    --font-body: var(--font-plus-jakarta-sans);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility bg-dots {
+    background-image: radial-gradient(var(--color-glacier-100) 1px, transparent 1px);
+    background-size: 32px 32px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility glacier-frost {
+    background: rgb(255 255 255 / 0.65);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgb(255 255 255 / 0.85);
+    box-shadow:
+            0 20px 40px -15px --alpha(var(--color-glacier-300) / 15%),
+            inset 0 0 0 1px rgb(255 255 255 / 0.9);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility glacier-card {
+    background: rgb(255 255 255 / 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgb(255 255 255 / 0.75);
+}
+
+@utility glacier-pill {
+    background: rgb(255 255 255 / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow: 0 4px 14px 0 --alpha(var(--color-glacier-200) / 20%);
 }
