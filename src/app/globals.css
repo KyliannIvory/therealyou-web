@@ -18,3 +18,33 @@
     --font-display: var(--font-bodoni-moda);
     --font-body: var(--font-plus-jakarta-sans);
 }
+
+@utility bg-dots {
+    background-image: radial-gradient(var(--color-glacier-100) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+@utility glacier-frost {
+    background: rgb(255 255 255 / 0.65);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgb(255 255 255 / 0.85);
+    box-shadow:
+            0 20px 40px -15px --alpha(var(--color-glacier-300) / 15%),
+            inset 0 0 0 1px rgb(255 255 255 / 0.9);
+}
+
+@utility glacier-card {
+    background: rgb(255 255 255 / 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgb(255 255 255 / 0.75);
+}
+
+@utility glacier-pill {
+    background: rgb(255 255 255 / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow: 0 4px 14px 0 --alpha(var(--color-glacier-200) / 20%);
+}
