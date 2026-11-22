@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const bodoniModa = Bodoni_Moda({
   variable: "--font-bodoni-moda",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <div className="absolute -bottom-20 left-1/4 size-[550px] rounded-full bg-linear-to-t from-glacier-100/60 to-transparent blur-[100px]" />
             <div className="absolute inset-0 bg-dots opacity-30" />
           </div>
+          <Navbar/>
           {children}
         </body>
       </html>

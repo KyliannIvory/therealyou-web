@@ -22,7 +22,7 @@ const glassEffects = ["glacier-frost", "glacier-card", "glacier-pill"];
 
 export default function Home() {
     return (
-        <main className="mx-auto w-full max-w-5xl space-y-16 p-10">
+        <main className="mx-auto w-full max-w-5xl space-y-16 p-10 pt-navbar">
 
             {/* Logo et icônes */}
             <section className="flex items-center gap-6">

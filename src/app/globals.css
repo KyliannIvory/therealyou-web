@@ -17,6 +17,45 @@
 
     --font-display: var(--font-bodoni-moda);
     --font-body: var(--font-plus-jakarta-sans);
+
+    /* Hauteur de la Navbar → h-navbar, et pt-navbar pour décaler le contenu */
+    --spacing-navbar: 5rem;
+
+    /* Petits textes en majuscules → text-label */
+    --text-label: 11px;
+
+    /* Ombres glacier → shadow-glacier-sm, shadow-glacier-glow */
+    --shadow-glacier-sm: 0 4px 30px rgb(125 211 252 / 0.06);
+    --shadow-glacier-glow: 0 0 25px rgb(125 211 252 / 0.4);
+}
+
+/* Fond en verre dépoli de la Navbar */
+@utility glass-bar {
+    @apply border-b border-white/70 bg-white/60 shadow-glacier-sm backdrop-blur-xl;
+}
+
+/* Conteneur centré de la page (Navbar, Footer…) */
+@utility page-container {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-10;
+}
+
+/* Bouton principal : « S'inscrire », « Trouver »… */
+@utility btn-ice {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+    border border-white/30 bg-linear-to-r from-glacier-900 via-slate-800 to-glacier-900
+    text-sm font-medium text-white transition
+    hover:scale-[1.02] hover:shadow-glacier-glow active:scale-[0.98];
+}
+
+/* Menu déroulant qui s'ouvre sous la Navbar, à droite (attribut HTML popover) */
+@utility popover-panel {
+    @apply glacier-frost inset-auto top-navbar right-6 m-0 mt-2 w-56 rounded-2xl p-2;
+}
+
+/* Bouton discret : « Se connecter » */
+@utility btn-ghost {
+    @apply rounded-full text-sm font-medium text-ice-slate transition
+    hover:bg-white/60 hover:text-glacier-900;
 }
 
 @utility bg-dots {
