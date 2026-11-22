@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const bodoniModa = Bodoni_Moda({
   variable: "--font-bodoni-moda",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
           <Navbar/>
           {children}
+          <Footer/>
         </body>
       </html>
   );

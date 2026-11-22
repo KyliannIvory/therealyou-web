@@ -27,6 +27,23 @@
     /* Ombres glacier → shadow-glacier-sm, shadow-glacier-glow */
     --shadow-glacier-sm: 0 4px 30px rgb(125 211 252 / 0.06);
     --shadow-glacier-glow: 0 0 25px rgb(125 211 252 / 0.4);
+    /* Ombre vers le haut, pour le Footer → shadow-glacier-up */
+    --shadow-glacier-up: 0 -10px 30px rgb(125 211 252 / 0.08);
+}
+
+/* Fond en verre dépoli du Footer, avec un liseré bleuté tout en haut */
+@utility glass-footer {
+    @apply relative border-t border-white/80 bg-white/70 shadow-glacier-up backdrop-blur-2xl;
+
+    &::before {
+        content: "";
+        @apply absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-glacier-300/60 to-transparent;
+    }
+}
+
+/* Liens du Footer : gris, foncent et glissent légèrement au survol */
+@utility footer-link {
+    @apply inline-block text-sm text-ice-slate transition hover:translate-x-0.5 hover:text-glacier-900;
 }
 
 /* Fond en verre dépoli de la Navbar */
