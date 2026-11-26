@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Calendar, Scissors, Search } from "lucide-react";
+import SearchBar from "@/components/searchBar/SearchBar";
 
 // Page de test du thème : palette, polices, effets de verre et icônes.
 
@@ -79,6 +80,7 @@ export default function Home() {
                     ))}
                 </div>
             </section>
+            <SearchBar/>
 
         </main>
     );
