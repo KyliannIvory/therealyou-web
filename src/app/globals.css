@@ -1,106 +1,132 @@
 @import "tailwindcss";
 
 @theme {
-    --color-glacier-50: #f4faff;
-    --color-glacier-100: #e0f2fe;
-    --color-glacier-200: #bae6fd;
-    --color-glacier-300: #7dd3fc;
-    --color-glacier-400: #38bdf8;
-    --color-glacier-500: #0ea5e9;
-    --color-glacier-600: #0284c7;
-    --color-glacier-700: #0369a1;
-    --color-glacier-800: #075985;
-    --color-glacier-900: #082f49;
+  --color-glacier-50: #f4faff;
+  --color-glacier-100: #e0f2fe;
+  --color-glacier-200: #bae6fd;
+  --color-glacier-300: #7dd3fc;
+  --color-glacier-400: #38bdf8;
+  --color-glacier-500: #0ea5e9;
+  --color-glacier-600: #0284c7;
+  --color-glacier-700: #0369a1;
+  --color-glacier-800: #075985;
+  --color-glacier-900: #082f49;
 
-    --color-ice-slate: #475569;
-    --color-ice-dark: #0f172a;
+  --color-ice-slate: #475569;
+  --color-ice-dark: #0f172a;
 
-    --font-display: var(--font-bodoni-moda);
-    --font-body: var(--font-plus-jakarta-sans);
+  --font-display: var(--font-bodoni-moda);
+  --font-body: var(--font-plus-jakarta-sans);
 
-    /* Hauteur de la Navbar → h-navbar, et pt-navbar pour décaler le contenu */
-    --spacing-navbar: 5rem;
+  /* Hauteur de la Navbar → h-navbar, et pt-navbar pour décaler le contenu */
+  --spacing-navbar: 5rem;
 
-    /* Petits textes en majuscules → text-label */
-    --text-label: 11px;
+  /* Petits textes en majuscules → text-label */
+  --text-label: 11px;
 
-    /* Ombres glacier → shadow-glacier-sm, shadow-glacier-glow */
-    --shadow-glacier-sm: 0 4px 30px rgb(125 211 252 / 0.06);
-    --shadow-glacier-glow: 0 0 25px rgb(125 211 252 / 0.4);
-    /* Ombre vers le haut, pour le Footer → shadow-glacier-up */
-    --shadow-glacier-up: 0 -10px 30px rgb(125 211 252 / 0.08);
+  /* Ombres glacier → shadow-glacier-sm, shadow-glacier-glow */
+  --shadow-glacier-sm: 0 4px 30px rgb(125 211 252 / 0.06);
+  --shadow-glacier-glow: 0 0 25px rgb(125 211 252 / 0.4);
+  /* Ombre vers le haut, pour le Footer → shadow-glacier-up */
+  --shadow-glacier-up: 0 -10px 30px rgb(125 211 252 / 0.08);
 }
 
 /* Fond en verre dépoli du Footer, avec un liseré bleuté tout en haut */
 @utility glass-footer {
-    @apply relative border-t border-white/80 bg-white/70 shadow-glacier-up backdrop-blur-2xl;
+  @apply relative border-t border-white/80 bg-white/70 shadow-glacier-up backdrop-blur-2xl;
 
-    &::before {
-        content: "";
-        @apply absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-glacier-300/60 to-transparent;
-    }
+  &::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-px;
+    @apply bg-linear-to-r from-transparent via-glacier-300/60 to-transparent;
+  }
 }
 
 /* Liens du Footer : gris, foncent et glissent légèrement au survol */
 @utility footer-link {
-    @apply inline-block text-sm text-ice-slate transition hover:translate-x-0.5 hover:text-glacier-900;
+  @apply inline-block text-sm text-ice-slate transition;
+  @apply hover:translate-x-0.5 hover:text-glacier-900;
 }
 
 /* Fond en verre dépoli de la Navbar */
 @utility glass-bar {
-    @apply border-b border-white/70 bg-white/60 shadow-glacier-sm backdrop-blur-xl;
+  @apply border-b border-white/70 bg-white/60 shadow-glacier-sm backdrop-blur-xl;
 }
 
 /* Conteneur centré de la page (Navbar, Footer…) */
 @utility page-container {
-    @apply mx-auto w-full max-w-7xl px-6 sm:px-10;
-}
-
-/* Bouton principal : « S'inscrire », « Trouver »… */
-@utility btn-ice {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-    border border-white/30 bg-linear-to-r from-glacier-900 via-slate-800 to-glacier-900
-    text-sm font-medium text-white transition
-    hover:scale-[1.02] hover:shadow-glacier-glow active:scale-[0.98];
+  @apply mx-auto w-full max-w-7xl px-6 sm:px-10;
 }
 
 /* Menu déroulant qui s'ouvre sous la Navbar, à droite (attribut HTML popover) */
 @utility popover-panel {
-    @apply glacier-frost inset-auto top-navbar right-6 m-0 mt-2 w-56 rounded-2xl p-2;
-}
-
-/* Bouton discret : « Se connecter » */
-@utility btn-ghost {
-    @apply rounded-full text-sm font-medium text-ice-slate transition
-    hover:bg-white/60 hover:text-glacier-900;
+  @apply inset-auto top-navbar right-6 m-0 mt-2 w-56 rounded-2xl p-2 glacier-frost;
 }
 
 @utility bg-dots {
-    background-image: radial-gradient(var(--color-glacier-100) 1px, transparent 1px);
-    background-size: 32px 32px;
+  background-image: radial-gradient(var(--color-glacier-100) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 @utility glacier-frost {
-    background: rgb(255 255 255 / 0.65);
-    backdrop-filter: blur(24px) saturate(160%);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgb(255 255 255 / 0.85);
-    box-shadow:
-            0 20px 40px -15px --alpha(var(--color-glacier-300) / 15%),
-            inset 0 0 0 1px rgb(255 255 255 / 0.9);
+  background: rgb(255 255 255 / 0.65);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgb(255 255 255 / 0.85);
+  box-shadow:
+    0 20px 40px -15px --alpha(var(--color-glacier-300) / 15%),
+    inset 0 0 0 1px rgb(255 255 255 / 0.9);
 }
 
 @utility glacier-card {
-    background: rgb(255 255 255 / 0.5);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgb(255 255 255 / 0.75);
+  background: rgb(255 255 255 / 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.75);
 }
 
 @utility glacier-pill {
-    background: rgb(255 255 255 / 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgb(255 255 255 / 0.9);
-    box-shadow: 0 4px 14px 0 --alpha(var(--color-glacier-200) / 20%);
+  background: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.9);
+  box-shadow: 0 4px 14px 0 --alpha(var(--color-glacier-200) / 20%);
+}
+
+/* Barre de recherche */
+
+/* Un champ de la barre (texte ou date) : icône à gauche, titre + valeur empilés à droite */
+@utility search-field {
+  @apply grid w-full grid-cols-[auto_1fr] items-center gap-x-3.5 p-3 text-left;
+  @apply rounded-xl border border-transparent transition;
+  @apply hover:border-glacier-200 hover:bg-white/80;
+}
+
+/* La case blanche qui contient l'icône (à combiner avec `group` sur le champ) */
+@utility search-field-icon {
+  @apply row-span-2 flex size-11 shrink-0 items-center justify-center;
+  @apply rounded-xl border border-glacier-100 bg-white/90 text-glacier-900 shadow-sm transition;
+  @apply group-hover:scale-105 group-hover:text-glacier-500;
+}
+
+/* Le petit titre en majuscules : « PRESTATION OU SALON », « QUAND ? »… */
+@utility search-field-label {
+  @apply text-label font-semibold tracking-wider text-ice-slate/80 uppercase;
+}
+
+/* La valeur saisie ou choisie */
+@utility search-field-value {
+  @apply block w-full truncate bg-transparent text-sm font-medium text-ice-dark sm:text-base;
+  @apply placeholder:text-slate-400 focus:outline-none;
+}
+
+/* Trait vertical dégradé entre deux champs, sur ordinateur uniquement */
+@utility search-divider {
+  @apply relative;
+
+  &:not(:first-child)::before {
+    content: "";
+    @apply absolute top-1/2 -left-1.5 hidden h-10 w-px -translate-y-1/2 md:block;
+    @apply bg-linear-to-b from-transparent via-glacier-200 to-transparent;
+  }
 }
